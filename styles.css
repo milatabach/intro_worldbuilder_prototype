@@ -167,6 +167,26 @@ body {
     transform: none;
 }
 
+.redirect-btn {
+    border-color: rgba(0, 255, 200, 0.5);
+    color: #00ffc8;
+    animation: pulse-border 1s ease-in-out infinite;
+}
+
+.redirect-btn:hover {
+    border-color: rgba(0, 255, 200, 0.8);
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+}
+
+@keyframes pulse-border {
+    0%, 100% {
+        border-color: rgba(0, 255, 200, 0.5);
+    }
+    50% {
+        border-color: rgba(0, 255, 200, 0.8);
+    }
+}
+
 /* Audio Info */
 .audio-info {
     color: #666666;

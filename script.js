@@ -282,7 +282,13 @@ audio.addEventListener('pause', () => {
 audio.addEventListener('ended', () => {
     audio.playing = false;
     pauseBtn.style.display = 'none';
-    playBtn.style.display = 'block';
+    playBtn.style.display = 'none';
+    document.getElementById('redirectBtn').style.display = 'block';
+});
+
+// Redirect button functionality
+document.getElementById('redirectBtn').addEventListener('click', () => {
+    window.location.href = 'https://worldbuilder.under-construction-forever.com/';
 });
 
 // Keyboard controls
