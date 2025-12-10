@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galactic Realm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background">
+        <canvas id="galaxyCanvas"></canvas>
+    </div>
+
+    <div class="container">
+        <div class="controls">
+            <button id="playBtn" class="button play-btn">
+                <span class="button-text">PLAY</span>
+            </button>
+            <button id="pauseBtn" class="button pause-btn" style="display: none;">
+                <span class="button-text">PAUSE</span>
+            </button>
+            <div class="audio-info">
+                <span id="currentTime">0:00</span> / <span id="duration">0:00</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progress" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <h1 class="title">Galactic Realm</h1>
+        <p class="subtitle">Journey Through the Cosmic Forces</p>
+    </div>
+
+    <audio id="audioPlayer">
+        <source src="Audio.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
