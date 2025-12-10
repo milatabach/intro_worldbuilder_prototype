@@ -171,6 +171,7 @@ let globY = canvas.height / 2;
 let globVX = (Math.random() - 0.5) * 0.3;
 let globVY = (Math.random() - 0.5) * 0.3;
 let globSize = 80;
+let baseGlobSize = 80;
 
 // Animation loop
 function animate() {
@@ -180,6 +181,10 @@ function animate() {
 
     // Get audio level
     let currentAudioLevel = getAudioLevel();
+
+    // Calculate pulsing size using sine wave
+    let pulseAmount = Math.sin(Date.now() * 0.003) * 0.3 + 1;
+    globSize = baseGlobSize * pulseAmount;
 
     // Update glowing orb position
     globX += globVX;
@@ -197,10 +202,11 @@ function animate() {
     globX = Math.max(globSize, Math.min(canvas.width - globSize, globX));
     globY = Math.max(globSize, Math.min(canvas.height - globSize, globY));
 
-    // Draw glowing orb
+    // Draw glowing orb with pulsing effect
     const orbGradient = ctx.createRadialGradient(globX, globY, 0, globX, globY, globSize);
-    orbGradient.addColorStop(0, `rgba(138, 43, 226, ${0.6 + currentAudioLevel * 0.2})`);
-    orbGradient.addColorStop(0.5, `rgba(75, 0, 130, ${0.3 + currentAudioLevel * 0.1})`);
+    const pulseOpacity = 0.4 + Math.sin(Date.now() * 0.003) * 0.2;
+    orbGradient.addColorStop(0, `rgba(138, 43, 226, ${pulseOpacity + currentAudioLevel * 0.1})`);
+    orbGradient.addColorStop(0.5, `rgba(75, 0, 130, ${pulseOpacity * 0.6 + currentAudioLevel * 0.05})`);
     orbGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
     
     ctx.fillStyle = orbGradient;
@@ -208,8 +214,8 @@ function animate() {
     ctx.arc(globX, globY, globSize, 0, Math.PI * 2);
     ctx.fill();
 
-    // Draw outer glow ring
-    ctx.globalAlpha = 0.15;
+    // Draw pulsing outer glow ring
+    ctx.globalAlpha = 0.1 + Math.sin(Date.now() * 0.003) * 0.08;
     ctx.strokeStyle = '#8a2be2';
     ctx.lineWidth = 2;
     ctx.beginPath();
