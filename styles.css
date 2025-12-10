@@ -40,7 +40,9 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    padding: 40px;
+    padding: 20px;
+    width: 100%;
+    overflow-y: auto;
 }
 
 /* Galaxy Image */
@@ -194,37 +196,132 @@ body {
     box-shadow: none;
 }
 
-/* Responsive Design */
+/* Responsive Design - Tablets */
 @media (max-width: 768px) {
-    .galaxy-image-wrapper {
-        width: 250px;
-        height: 250px;
-    }
-
-    .glow-effect {
-        width: 280px;
-        height: 280px;
+    .container {
+        padding: 15px;
     }
 
     .title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 5px;
     }
 
     .subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-bottom: 25px;
     }
 
     .controls {
-        padding: 20px 30px;
+        padding: 15px 20px;
+        gap: 12px;
+        width: 100%;
+        max-width: 350px;
     }
 
     .button {
-        padding: 10px 25px;
-        font-size: 0.9rem;
+        padding: 9px 25px;
+        font-size: 0.85rem;
     }
 
     .progress-bar {
-        width: 250px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .audio-info {
+        font-size: 0.8rem;
+    }
+}
+
+/* Responsive Design - Phones (600px and below) */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 12px;
+        justify-content: flex-start;
+        padding-top: 40px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 20px;
+    }
+
+    .controls {
+        padding: 12px 15px;
+        gap: 10px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .button {
+        padding: 8px 18px;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+
+    .audio-info {
+        font-size: 0.75rem;
+    }
+
+    .progress-bar {
+        width: 100%;
+        max-width: 260px;
+        height: 2px;
+    }
+}
+
+/* Responsive Design - Small phones (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+        padding-top: 30px;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+        margin-bottom: 3px;
+    }
+
+    .subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 0px;
+        margin-bottom: 15px;
+    }
+
+    .controls {
+        padding: 10px 12px;
+        gap: 8px;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .button {
+        padding: 7px 15px;
+        font-size: 0.7rem;
+        letter-spacing: 0.3px;
+    }
+
+    .audio-info {
+        font-size: 0.7rem;
+    }
+
+    .progress-bar {
+        width: 100%;
+        max-width: 240px;
+        height: 2px;
     }
 }
 
